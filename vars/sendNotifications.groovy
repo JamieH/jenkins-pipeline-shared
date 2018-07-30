@@ -3,7 +3,7 @@
 /**
  * Send notifications based on build status string
  */
-def call(String buildStatus = 'STARTED', string channel = '') {
+def call(String buildStatus = 'STARTED', String channel = '') {
   // build status of null means successful
   buildStatus =  buildStatus ?: 'SUCCESSFUL'
 
