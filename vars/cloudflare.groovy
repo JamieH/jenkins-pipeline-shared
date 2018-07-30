@@ -1,5 +1,5 @@
-// src/cloudflare/Caching.groovy
-package cloudflare;
+#!/usr/bin/env groovy
+
 def setDevelopmentMode(String credId, String value) {
     
     withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'cloudflare-api',
@@ -17,6 +17,7 @@ def setDevelopmentMode(String credId, String value) {
     """
     }
 }
+
 def purgeAll(String credId) {
     
     withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'cloudflare-api',
