@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-def run(String credId, String zone) {
+def call(String credId, String zone) {
     
     withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'cloudflare-api',
                     usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD'],]) {
