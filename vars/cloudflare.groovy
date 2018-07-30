@@ -18,7 +18,7 @@ def setDevelopmentMode(String credId, String value) {
     }
 }
 
-def purgeAll(String credId) {
+def purgeAll(String credId, String zone) {
     
     withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'cloudflare-api',
                     usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD'],
@@ -27,7 +27,7 @@ def purgeAll(String credId) {
     
     sh """#!/bin/bash
     set -x
-    curl -X DELETE "https://api.cloudflare.com/client/v4/zones/$zone/purge_cache" \
+    curl -X DELETE "https://api.cloudflare.com/client/v4/zones/${zone}/purge_cache" \
     -H "Content-Type:application/json" \
     -H "X-Auth-Key:$PASSWORD" \
     -H "X-Auth-Email:$USERNAME" \
