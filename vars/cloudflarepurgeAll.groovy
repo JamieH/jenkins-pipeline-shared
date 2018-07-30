@@ -3,8 +3,7 @@
 def run(String credId, String zone) {
     
     withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'cloudflare-api',
-                    usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD'],
-                    string(credentialsId: credId, variable: 'zone'),]) {
+                    usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD'],]) {
                         
     
     sh """#!/bin/bash
